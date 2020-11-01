@@ -10,7 +10,7 @@ import Foundation
 /// Highlights the given text in the requested terminal color, (defaulting to bright yellow).
 /// - Parameter text: The content to highlight
 /// - Parameter style: The terminal style to highlight with.
-/// - Returns: An instance of `ColorTerminalText` to add to `String` output
+/// - Returns: An instance of `StyledTerminalText` to add to `String` output
 public func highlight<Content: StringProtocol>(_ text: Content, with style: TerminalStyle = .brightYellow) -> StyledTerminalText { StyledTerminalText(text, style: style) }
 
 // Convenience functions for each preset color

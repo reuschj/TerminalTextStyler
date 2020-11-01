@@ -50,10 +50,10 @@ let yellowManual = TerminalStyle(codes: [0, 93])
 
 // Using enums
 let yellow = TerminalStyle(styles: [.normal], foreground: .brightYellow)
-let noColor = TerminalColor() // Initialize without input parameters for no color
+let noColor = TerminalStyle() // Initialize without input parameters for no color
 ```
 
-Now, when placed in a string (of by accessing the `command` property), a `TerminalStyle` instance will generate the ANSI escape code string:
+Now, when placed in a string (or by accessing the `command` property), a `TerminalStyle` instance will generate the ANSI escape code string:
 
 ```swift
 let yellow = TerminalStyle(styles: [.normal], foreground: .brightYellow)
@@ -72,7 +72,7 @@ print("\(yellow.wrap("Hello, World!")) Blah blah blah...")
 
 ### Presets
 
-For your convenience,  `TerminalStyle`  comes in with some static presets:
+For your convenience, `TerminalStyle` comes in with some static presets:
 
 ```swift
 let yellow = TerminalStyle.brightYellow
@@ -91,7 +91,7 @@ print("\(greeting) Blah blah blah...")
 
 ## Highlight Function(s)
 
-The last step to making your code clean and easy is by just using the `highlight` convenience function to generate a `ColorTerminalText`:
+The last step to making your code clean and easy is by just using the `highlight` convenience function to generate a `StyledTerminalText`:
 
 ```swift
 print("\(highlight("Hello, World!", with: .brightYellow)) Blah blah blah...")
@@ -99,7 +99,7 @@ print("\(highlight("Hello, World!", with: .brightYellow)) Blah blah blah...")
 print("\(highlight("Hello, World!")) Blah blah blah...")
 ```
 
-Each color in the table above also has a unique highlight function:
+Each style in the table above also has a unique highlight function:
 
 ```swift
 print("This is \(highlightBrightYellow("highlighted in bright yellow")) and this is \(highlightRed("highlighted in red")).")

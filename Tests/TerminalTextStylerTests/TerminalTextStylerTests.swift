@@ -47,7 +47,7 @@ final class TerminalTextStylerTests: XCTestCase {
         XCTAssertEqual(wrapped, "\(yellow)Hello, World!\(noColor)")
     }
     
-    func testColorTerminalText() {
+    func testStyledTerminalText() {
         let highlighted = StyledTerminalText("Hello, World!", style: .brightYellow)
         XCTAssertEqual(highlighted.output, "\u{001B}[1;93mHello, World!\u{001B}[0m")
         XCTAssertEqual("\(highlighted)", "\u{001B}[1;93mHello, World!\u{001B}[0m")
